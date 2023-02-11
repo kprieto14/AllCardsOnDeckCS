@@ -1,14 +1,14 @@
 # AllCardsOnDeckCS
 
-My attempt at trying the PEDAC myself and see how much I could come up with on my own, unfortunately it seems I was still missing much information to help me out and I needed the video for much of the help :(
+Another attempt at the pedac process to include adventure mode.
 
 P
 
-The deck should contain 52 cards, with 2 different lists of 4 suits and 13 ranks. They should be shuffled with the last card in the deck (rightIndex) being shuffled with a random card in the deck. 
+Instead of showing just the top two cards, the program will now store these cards in TWO different lists (one for each hand), which might hopefully be made into a game of war. Need to make sure that the program does not re-shuffle the cards and is constantly using the same deck for the entire "game". 
 
 E
 
-Will need variables for Suits, Ranks, Indexes
+Will need variables for playerHandOne and playerHandTwo to keep track of the cards, each list should contain 26 cards.
 
 D
 
@@ -32,5 +32,13 @@ for rightIndex from numberOfCards - 1 down to 1 do:
 Will need the following to work with the shuffling:
 var randomNumberGenerator = new Random();
 var randomNumber = randomNumberGenerator.Next(52); with the 52 representing the 52 cards in the deck. Come back to Adventure mode later.
+
+NEW ADVENTURE ALGO
+
+Create a new empty list for playerHandOne and another one for playerHandTwo
+
+Create a loop that takes the first 26 cards from the deck and add them to the PlayerOneHand, then take the last 26 cards from the deck and add them to the PlayerTwoHand (perhaps using an if statement? as in if the count is less than 26, then add the card to first hand, ELSE add the rest of the cards into second hand).
+
+Print out cards in the list for PlayerOne and PlayerTwo with the count number to ensure this worked as well as the deck to ensure the deck is empty.
 
 C

@@ -38,11 +38,40 @@ namespace AllCardsOnDeckCS
         deck[leftIndex] = rightCard;
       }
 
+      //To check that the deck has been successfully shuffled by showing the top 2 cards!
       var firstCard = deck[0];
       var secondCard = deck[1];
 
       Console.WriteLine(firstCard);
       Console.WriteLine(secondCard);
+
+      //Creates new lists to add cards into deck for PlayerOne and PlayerTwo
+      var playerHand = new List<string> ();
+      var playerHandTwo = new List<string> ();
+
+      //Creates a loop, that gives the first 26 shuffle cards to the first player, then gives the last 26 cards to the 2nd player and adds the cards to the corresponding lists
+      for(var gameDeck = 0; gameDeck <= numberOfCards -1; gameDeck++)
+      {
+        if (gameDeck <= 25) {
+          var playerOneCard = deck[gameDeck];
+          playerHand.Add(playerOneCard);
+          Console.WriteLine($"Player One gets the {playerOneCard}");
+        }
+        else {
+          var playerTwoCard = deck[gameDeck];
+          playerHandTwo.Add(playerTwoCard);
+          Console.WriteLine($"Player Two gets the {playerTwoCard}");
+        }
+      }  
+
+      //Clears the original deck, because in a real-world aspect, this would be empty and not exist anymore when cards are handed out.
+      deck.Clear();
+
+      //Code that displays the count for playerHandOne, playerHandTwo, and deck to ensure deck is empty and each list has 26 "cards"
+      Console.WriteLine(playerHand.Count);
+      Console.WriteLine(playerHandTwo.Count);
+      Console.WriteLine(deck.Count);
+  
     }
   }
 }
