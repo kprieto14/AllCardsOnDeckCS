@@ -41,4 +41,15 @@ Create a loop that takes the first 26 cards from the deck and add them to the Pl
 
 Print out cards in the list for PlayerOne and PlayerTwo with the count number to ensure this worked as well as the deck to ensure the deck is empty.
 
-C
+New Epic Algo
+
+Implement a Game of War, One card from PlayerOne will be compared to PlayerTwo. the higher card will win the round and both cards will be added to the player with the higher card. If the two cards are equal, then place 3 cards down from each hand. On the 4th card, compare values again. The player with the higher card on the 4th card will win all 10 cards. This repeats until one player has all 52 cards.
+
+playerHand list, playerHandTwo list
+Kings(12), queen(11), Jacks(10), Ace (1)
+
+Will need looping, if statements, adding to lists, parse to turn strings into ints with values
+
+Convert strings into ints (BUT HOW)
+Grab card from playerHand and compare to playerHandTwo
+

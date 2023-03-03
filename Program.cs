@@ -1,28 +1,397 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace AllCardsOnDeckCS
 {
+
+  //Creates a class that will house 52 cards
+  class Card 
+    {
+      public string Face {get; set;}
+      public string Suit {get; set;}
+      public int Value {get; set;}
+    }
   class Program
   {
-    static void Main(string[] args)
+        static void Main(string[] args)
     {
-      //Creates new lists of the suits, ranks, and the deck list to combine the two to be added later through looping.
-      var suits = new List<string>() {"Clubs", "Diamonds", "Hearts", "Spades"};
-      var ranks = new List<string>() {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
-      var deck = new List<string>(); 
 
-      //Creates a nested loop to assign all the ranks in each suit, and adds them to the deck list.
-      foreach (var suit in suits) 
+      Console.WriteLine("Welcome to the game of War! I will be your dealer. Lets shuffle the cards and begin!");
+      Console.WriteLine();
+    
+      //Creates the deck that assigns a Suit, face, value to each 52 cards. 
+      var deck = new List<Card>()
       {
-        foreach (var rank in ranks) 
-        {
-          var card = $"{rank} of {suit}";
-          deck.Add(card);
-        }
-      }
-      
-      var numberOfCards = deck.Count; 
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "Ace",
+            Value = 14
+          },
+
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "2",
+            Value = 2
+          }, 
+
+        new Card()
+         {
+           Face = "Clubs",
+            Suit = "3",
+            Value = 3
+          },
+
+        new Card()
+         {
+           Face = "Clubs",
+           Suit = "4",
+           Value = 4
+          },
+
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "5",
+            Value = 5
+          },
+
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "6",
+            Value = 6
+          },
+
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "7",
+            Value = 7
+          },
+
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "8",
+            Value = 8
+          },
+
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "9",
+            Value = 9
+          },
+
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "10",
+            Value = 10
+          },
+
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "Jack",
+            Value = 11
+          },
+
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "Queen",
+            Value = 12
+          },
+
+        new Card()
+          {
+            Face = "Clubs",
+            Suit = "King",
+            Value = 13
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "Ace",
+            Value = 14
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "2",
+            Value = 2
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "3",
+            Value = 3
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "4",
+            Value = 4
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "5",
+            Value = 5
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "6",
+            Value = 6
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "7",
+            Value = 7
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "8",
+            Value = 8
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "9",
+            Value = 9
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "10",
+            Value = 10
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "Jack",
+            Value = 11
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "Queen",
+            Value = 12
+          },
+
+        new Card()
+          {
+            Face = "Diamonds",
+            Suit = "King",
+            Value = 13
+          },
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "Ace",
+            Value = 14
+          },
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "2",
+            Value = 2
+          },
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "3",
+            Value = 3
+          },  
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "4",
+            Value = 4
+          },  
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "5",
+            Value = 5
+          },  
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "6",
+            Value = 6
+          },  
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "7",
+            Value = 7
+          },  
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "8",
+            Value = 8
+          },  
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "9",
+            Value = 9
+          },  
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "10",
+            Value = 10
+          },  
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "Jack",
+            Value = 11
+          },  
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "Queen",
+            Value = 12
+          },  
+
+        new Card()
+          {
+            Face = "Hearts",
+            Suit = "King",
+            Value =13
+          },
+        
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "Ace",
+            Value = 14
+          },
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "2",
+            Value = 2
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "3",
+            Value = 3
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "4",
+            Value = 4
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "5",
+            Value = 5
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "6",
+            Value = 6
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "7",
+            Value = 7
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "8",
+            Value = 8
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "9",
+            Value = 9
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "10",
+            Value = 10
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "Jack",
+            Value = 11
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "Queen",
+            Value = 12
+          }, 
+
+        new Card()
+          {
+            Face = "Spades",
+            Suit = "King",
+            Value = 13
+          }, 
+         
+                            
+      };
+
+      var numberOfCards = deck.Count;
+      Console.WriteLine($"There are {numberOfCards} total cards.");
 
       //Establishes loop that will shuffle deck
       for(var rightIndex = numberOfCards - 1; rightIndex >=1; rightIndex--) 
@@ -41,13 +410,14 @@ namespace AllCardsOnDeckCS
       //To check that the deck has been successfully shuffled by showing the top 2 cards!
       var firstCard = deck[0];
       var secondCard = deck[1];
-
-      Console.WriteLine(firstCard);
-      Console.WriteLine(secondCard);
+   
+      Console.WriteLine($"The first card is a {firstCard.Suit} of {firstCard.Face}");
+      Console.WriteLine($"The second card is a {secondCard.Suit} of {secondCard.Face}");
+      Console.WriteLine();
 
       //Creates new lists to add cards into deck for PlayerOne and PlayerTwo
-      var playerHand = new List<string> ();
-      var playerHandTwo = new List<string> ();
+      var playerHand = new List<Card> ();
+      var playerHandTwo = new List<Card> ();  
 
       //Creates a loop, that gives the first 26 shuffle cards to the first player, then gives the last 26 cards to the 2nd player and adds the cards to the corresponding lists
       for(var gameDeck = 0; gameDeck <= numberOfCards -1; gameDeck++)
@@ -55,23 +425,110 @@ namespace AllCardsOnDeckCS
         if (gameDeck <= 25) {
           var playerOneCard = deck[gameDeck];
           playerHand.Add(playerOneCard);
-          Console.WriteLine($"Player One gets the {playerOneCard}");
         }
         else {
           var playerTwoCard = deck[gameDeck];
           playerHandTwo.Add(playerTwoCard);
-          Console.WriteLine($"Player Two gets the {playerTwoCard}");
         }
       }  
 
       //Clears the original deck, because in a real-world aspect, this would be empty and not exist anymore when cards are handed out.
       deck.Clear();
 
-      //Code that displays the count for playerHandOne, playerHandTwo, and deck to ensure deck is empty and each list has 26 "cards"
-      Console.WriteLine(playerHand.Count);
-      Console.WriteLine(playerHandTwo.Count);
-      Console.WriteLine(deck.Count);
-  
+     bool gameOn = true;
+     while(gameOn == true)
+     {
+      var playerCard = playerHand[0];
+      var secondPlayerCard = playerHandTwo[0];
+
+      Console.WriteLine($"Player One reveals a {playerCard.Suit} of {playerCard.Face} while Player Two reveals a {secondPlayerCard.Suit} of {secondPlayerCard.Face}.");
+
+      //Checks both cards values and assigns a win to either and adjusts accordingly
+      //First If statement that runs if Player 1 is greater than Player 2
+      if (playerCard.Value > secondPlayerCard.Value)
+      {
+        //Algo that starts if the temp list has cards from starting the war!
+        if (deck.Count != 0)
+        {
+          Console.Write("⚔️ Player 1 has won the war! They have added the");
+          for (var count = 0; count < deck.Count; count ++)
+          {
+            var currentCard = deck[count];
+
+            Console.Write($" {currentCard.Suit} of {currentCard.Face},");
+            playerHand.Add(deck[count]);
+          }
+          Console.WriteLine($" {secondPlayerCard.Suit} of {secondPlayerCard.Face}, and {playerCard.Suit} of {playerCard.Face} to their hand! Congratulations!");
+          //Clears original deck to continue regular war
+          deck.Clear();
+        }
+        else
+        {
+          Console.WriteLine($"Player One has won this round! They have added the {secondPlayerCard.Suit} of {secondPlayerCard.Face} to their hand.");
+        }
+        //Adds both cards won to the back of the list for playerHand
+        playerHand.Add(secondPlayerCard);
+        playerHand.Add(playerCard);
+      }
+      //Second if statement that runs if Player 2 is greater than Player 1
+      else if (playerCard.Value < secondPlayerCard.Value)
+      {
+        //Algo that starts if the temp list has cards from starting the war!
+        if (deck.Count != 0)
+        {
+          Console.Write("⚔️ Player 2 has won the war! They have added the");
+          for (var count = 0; count < deck.Count; count ++)
+          {
+            var currentCard = deck[count];
+            
+            Console.Write($" {currentCard.Suit} of {currentCard.Face},");
+            playerHandTwo.Add(deck[count]);
+          }
+          Console.WriteLine($" {playerCard.Suit} of {playerCard.Face}, and {secondPlayerCard.Suit} of {secondPlayerCard.Face} to their hand! Congratulations!");
+          //Clears original deck to continue regular war
+          deck.Clear();
+        }
+        else
+        {
+          Console.WriteLine($"Player Two has won this round! They have added the {playerCard.Suit} of {playerCard.Face} to their hand.");
+        }
+        //Adds both cards won to the back of the list for playerHandTwo 
+        playerHandTwo.Add(playerCard);
+        playerHandTwo.Add(secondPlayerCard);
+      }
+      //Statement that triggers that War has begun
+      else if (playerCard.Value == secondPlayerCard.Value)
+      {
+        Console.WriteLine("Uh oh, looks like it's time to start a War!");
+
+        //Adds them into a temporary list that will be checked in the next loop.
+        deck.Add(secondPlayerCard);
+        deck.Add(playerCard);
+      }
+      else
+      {
+        Console.WriteLine("Something has gone wrong. Please check the code.");
+        gameOn = false;
+      }
+
+      //Removes the cards that have been used during the round
+      playerHand.RemoveAt(0);
+      playerHandTwo.RemoveAt(0);
+      Console.WriteLine($"Player One has {playerHand.Count} cards and Player Two has {playerHandTwo.Count} cards.");
+      Console.WriteLine();
+
+      //Constantly checks if either hand ever reaches 0 to officially end the game.
+      if (playerHand.Count == 0)
+      {
+        Console.WriteLine("Game over! Player 2 has won!");
+        gameOn = false;
+      }
+      else if (playerHandTwo.Count == 0)
+      {
+        Console.WriteLine("Game over! Player 1 has won!");
+        gameOn = false;
+      }
+     }
     }
   }
 }
